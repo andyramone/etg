@@ -1,0 +1,339 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="css/etg.min.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="scripts/script.js"></script>
+<script src="phonegap.js"></script>
+
+
+<title>Strefa Kursów</title>
+</head>
+
+<body>
+	<!-- Main -->
+	<div id="home" data-role="page" data-title="home" data-theme="c">
+		<div data-role="header">
+			<div data-type="horizontal" data-role="controlgroup" class="ui-btn-inline">
+			<a href="#login" data-role="button" data-icon="user">Login</a>
+			<a href="#register" data-role="button" data-icon="user">Register</a>
+			<a href="#settings" data-role="button" data-icon="gear" class="ui-btn-right">Settings</a>
+			</div>
+		</div>
+		<div data-role="content">
+			<div id="logo"><img src="resources/etg_thumb1.png"/></p></div>
+			<div data-role="controlgroup" data-type="vertical">
+				<a href="#approvals" data-role="button">Approvals</a>
+				<a href="#blog" data-role="button">Blog</a>
+				<a href="#singlepost" data-role="button">Single post demo</a>
+				<a href="#videos" data-role="button">Instruktaż</a>
+				<a href="#expenses1" data-role="button">Submit an expense</a>
+				
+			</div>
+		</div>	
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<div data-role="content">
+			Expense To Go <small>Copyright AwwwDesign 2017</small>
+			</div>
+		</div>
+		<div data-role="panel" id="login" data-display="overlay">
+			<form id="loginform">
+				<label>Email</label>
+				<input type="email" />
+				<label>Password</label>
+				<input type="password">
+				<input type="submit" value="Login" data-icon="check">
+				<a href="#home" data-rel="close" data-role="button" data-icon="back">Cancel</a>
+			</form>	
+		</div>
+	</div>
+	
+			<!-- Sign up page -->
+	<div id="register" data-role="page" data-title="Register">
+		<div data-role="header">
+			<h1>Register</h1>
+		</div>
+		<div data-role="content">
+			<form id="loginform">
+				<label>Email</label>
+				<input type="email" />
+				<label>Password</label>
+				<input type="password">
+				<label>Retype password</label>
+				<input type="password">
+				<label>Default cost center</label>
+				<select name="cost_center" id="cost_center">
+					<option value="1001362">.com (1001362)</option>
+					<option value="1001476">CMS (1001476)</option>
+				</select>
+				<input type="submit" value="Register" data-icon="check">
+				<a href="#home" data-rel="close" data-role="button" data-icon="back">Cancel</a>
+			</form>	
+		</div>
+	</div>
+	
+		<!-- Expense approval page -->
+	<div id="approvals" data-role="page" data-title="Approvals">
+		<div data-role="header">
+			<h1>Approvals</h1>
+			<a href="#home" data-icon="home" data-iconpos="notext"></a>
+		</div>
+		<div data-role="content">
+			<h2>Expenses approved by you</h2>
+			<ul data-role="listview">
+				<li><a href="#">Pending approval <span class="ui-li-count">2</span></a></li>
+				<li><a href="#">Approved expenses <span class="ui-li-count">5</span></a></li>
+				<li><a href="#">Declined expenses <span class="ui-li-count">1</span></a></li>
+			</ul>
+			<h2>Expenses list</h2>
+			<ul data-role="listview">
+				<li data-role="list-divider">Today</li>
+				<li><a href="#">Jan Kowalski</a></li>
+				<li data-role="list-divider">This week</li>
+				<li><a href="#">Jan Kowalski</a></li>
+				<li><a href="#">Jan Kowalski</a></li>
+				<li><a href="#">Jan Kowalski</a></li>
+				<li data-role="list-divider">Older than a week</li>
+				<li><a href="#">Jan Kowalski</a></li>
+				<li><a href="#">Jan Kowalski</a></li>
+				<li><a href="#">Jan Kowalski</a></li>
+				<li><a href="#">Jan Kowalski</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<p>Expense To Go <small>Copyright AwwwDesign 2017</small></p>
+		</div>
+	</div>
+	
+		<!-- Strona blog -->
+	<div id="blog" data-role="page" data-title="Blog">
+		<div data-role="header">
+			<h1>Blog</h1>
+			<a href="#home" data-icon="home" data-iconpos="notext"></a>
+		</div>
+		<div data-role="content" id="blog-wrapper">
+		<p>Blog</p>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<p>Expense To Go <small>Copyright AwwwDesign 2017</small></p>
+		</div>
+	</div>
+	
+	<div id="post" data-role="page">
+		<div data-role="header">
+			<h1>Blog</h1>
+			<a href="#blog" data-icon="back" data-iconpos="notext">Back</a>
+		</div>
+		<div data-role="content" id="post-wrapper">
+
+		</div>
+	</div>
+	
+	<div id="singlepost" data-role="page" data-title="Single blog post demo">
+		<div data-role="header">
+			<h1>Blog post</h1>
+			<a href="#home" data-icon="home" data-iconpos="notext"></a>
+		</div>
+		<div data-role="content">
+		<p><a href="#" onclick="loadPost('8217352461718811923')">Click Me</a></p>
+		</div>
+	</div>
+	
+		<!-- Videos list page -->
+	<div id="videos" data-role="page" data-title="Videos">
+		<div data-role="header">
+			<h1>Instruktaż wideo</h1>
+			<a href="#home" data-icon="home" data-iconpos="notext"></a>
+		</div>
+		<div data-role="content" id="video-wrapper">
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<p>Expense To Go <small>Copyright AwwwDesign 2017</small></p>
+		</div>
+	</div>
+	
+	<!-- Single video page -->
+	<div id="player" data-role="page" data-title="Player">
+		<div data-role="header">
+			<h1>Player</h1>
+			<a href="#videos" data-icon="back" data-iconpos="notext"></a>
+		</div>
+		<div data-role="content">
+			<div id="video">
+			</div>
+		</div>
+	</div>
+	
+			<!-- Expenses page - basic info-->
+	<div id="expenses1" data-role="page" data-title="expenses1">
+		<div data-role="header">
+			<h1>Submit an expense</h1>
+			<a href="#home" data-icon="home" data-iconpos="notext"></a>
+		</div>
+		<div data-role="content">
+			<form id="expense_basic" method="post" action="#expenses2">
+				<label for="employee_name">Employee name</label>
+				<input type="text" id="employee_name" name="employee_name" />
+				<label for="employee_email">Email address</label>
+				<input type="email" id="employee_email" name="employee_email" />
+				<label for="cost_center" class="select">Cost center</label>
+				<select name="cost_center" id="cost_center">
+					<option value="1001362">.com (1001362)</option>
+					<option value="1001476">CMS (1001476)</option>
+				</select>
+				<label for="expense_date">Expense date</label>
+				<input type="date" id="expense_date" name="expense_date" />				
+				<button id="next">Next</button>
+			</form>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#expenses1" data-icon="info" class="ui-btn-active">Basic info</a></li>
+					<li><a href="#expenses2" data-icon="bullets">Expense items</a></li>
+					<li><a href="#expenses3" data-icon="check" class="ui-disabled">Review & submit</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+			<!-- Expenses page - items -->
+	<div id="expenses2" data-role="page" data-title="expenses2">
+		<div data-role="header">
+			<h1>Submit an expense</h1>
+			<a href="#home" data-icon="home" data-iconpos="notext"></a>
+		</div>
+		<div data-role="content">
+			<form id="expense_items" method="post" action="#expenses3">
+				<div data-role="fieldcontain">
+					<label for="description">Description</label>
+					<input type="text" id="description" name="description" />
+					<label for="document_id">Document ID</label>
+					<input type="text" id="document_id" name="document_id" />
+					<label for="invoice_amount">Amount</label>
+					<input type="number" id="invoice_amount" name="invoice_amount" pattern="[0-9.]*" />
+					<label for="invoice_currency" class="select">Currency</label>
+					<select name="invoice_currency" id="invoice_currency">
+						<option value="EUR">EUR</option>
+						<option value="USD">USD</option>
+						<option value="PLN">PLN</option>
+					</select>
+					<button id="add" style="float: right;">Add item</button>
+				</div>
+			</form>
+			<table id="expense_items" data-role="table" data-mode="columntoggle" class="ui-responsive ui-table table-stripe">
+				<thead class="ui-bar-a">
+					<tr>
+						<th data-priority="1">Item number</th>
+						<th data-priority="2">Description</th>
+						<th data-priority="3">Document ID</th>
+						<th data-priority="2">Type</th>
+						<th data-priority="1">Amount</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Flight ticket</td>
+						<td>9943631232212</td>
+						<td>Ticket</td>
+						<td>1142.66 PLN</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Dieta</td>
+						<td>Alwnc000001</td>
+						<td>Allowance</td>
+						<td>340 EUR</td>
+					</tr>
+				</tbody>
+			</table>
+			<button id="next">Next</button>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#expenses1" data-icon="info">Basic info</a></li>
+					<li><a href="#expenses2" data-icon="bullets" class="ui-btn-active">Expense items</a></li>
+					<li><a href="#expenses3" data-icon="check" class="ui-disabled">Review & submit</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+				<!-- Expenses page - submit -->
+	<div id="expenses3" data-role="page" data-title="expenses3">
+		<div data-role="header">
+			<h1>Submit an expense</h1>
+			<a href="#home" data-icon="home" data-iconpos="notext"></a>
+		</div>
+		<div data-role="content">
+		<p>Content goes here</p>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#expenses1" data-icon="info" class="ui-btn-active">Basic info</a></li>
+					<li><a href="#expenses2" data-icon="bullets">Expense items</a></li>
+					<li><a href="#expenses3" data-icon="check">Review & submit</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Settings page -->
+	<div id="settings" data-role="page" data-title="Settings">
+		<div data-role="header">
+			<h1>Settings</h1>
+			<a href="#home" data-icon="home" data-iconpos="notext"></a>
+		</div>
+		<div data-role="content">
+			<form id="settings" method="post" action="#">
+				<div data-role="fieldcontain">
+					<label for="offline">Offline</label>
+					<select data-role="flipswitch" name="offline" id="offline">
+						<option value="Off" selected="">Off</option>
+						<option value="On">On</option>
+					</select>
+				</div>
+				<div data-role="fieldcontain">					
+					<div data-role="controlgroup" data-type="horizontal">
+						<legend>Language</legend>
+						<label for="EN">EN</label>
+						<input type="radio" id="EN" value="EN" checked="checked" name="language">
+						<label for="PL">PL</label>
+						<input type="radio" id="PL" value="PL" name="language">
+					</div>
+				</div>
+				<div data-role="fieldcontain">					
+					<div data-role="controlgroup">
+						<legend>Roles</legend>
+						<label for="approver">Approver</label>
+						<input type="checkbox" id="approver" name="approver">
+						<label for="submitter">Submitter</label>
+						<input type="checkbox" id="submitter" name="submitter">
+					</div>
+				</div>
+				<div data-role="fieldcontain">					
+						<legend>Autoapprove limit</legend>
+						<label for="slider">0 to $10M</label>
+						<input type="range" name="slider" id="slider" value="0" min="0" max="10000" />
+				</div>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<p>Expense To Go <small>Copyright AwwwDesign 2017</small></p>
+		</div>
+	</div>	
+<script src="https://www.googleapis.com/blogger/v3/blogs/7135039523376541359/posts?fields=items(author%2FdisplayName%2Ctitle%2Ccontent%2Cid)&key=AIzaSyA3p3gG6UKLpE3r_rEhoB0Z4Hvzq6FpQi0&callback=showPosts"></script>
+<script src="https://www.googleapis.com/youtube/v3/search?key=AIzaSyA3p3gG6UKLpE3r_rEhoB0Z4Hvzq6FpQi0&channelId=UC3InBBg6bVPnxIm9Pkd96KQ&part=snippet,id&order=date&maxResults=5&callback=showVideos"></script>
+<!-- <script src="https://www.googleapis.com/youtube/v3/videos?part=contentDetails%2Cstatistics&id=pcNqScmsnb4&key=AIzaSyA3p3gG6UKLpE3r_rEhoB0Z4Hvzq6FpQi0&callback=getVideo"></script>
+ -->
+ </body>
+</html>
